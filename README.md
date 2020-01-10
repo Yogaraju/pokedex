@@ -1,2 +1,11 @@
-# pokedex
-Mesmerising UI of Pokemon 
+# Pokedex
+Mesmerising UI of Pokemon
+
+# Prerequisites
+npm and node
+
+# Install Angular-CLI
+sudo npm install -g @angular/cli
+
+# Run
+ng serve 
