@@ -1,0 +1,144 @@
+/*Search bar*/
+
+.searchBar {
+  width: 30%;
+  margin-left: 35%;
+  margin-top: 75px;
+}
+
+.searchBar input {
+  background-image: linear-gradient(to left, #e80026 20%, #fefefe);
+  color: black;
+  font-family: "Cute Font", cursive;
+  font-size: 26px;
+  height: 40px;
+}
+
+.searchBar input::placeholder {
+  color: black;
+  font-family: "Cute Font", cursive;
+  font-size: 26px;
+}
+
+.container {
+  margin-top: 115px;
+}
+
+/*Card which shows pokemon's info shortly*/
+
+.card {
+  background-image: linear-gradient(#003a71, #8ad7ff, #0a294c);
+  cursor: pointer;
+}
+
+.card-text {
+  font-family: "Cute Font", cursive;
+  font-size: 30px;
+  color: #e9ecef;
+}
+
+/* entire container, keeps perspective */
+
+.flip-container {
+  perspective: 1000px;
+}
+
+/*animation for flipping when the page loads*/
+
+@keyframes flip {
+  0% {
+    transform: rotateY(180deg);
+  }
+  20% {
+    transform: rotateY(90deg);
+  }
+  40% {
+    transform: rotateY(270deg);
+  }
+  60% {
+    transform: rotateY(270deg);
+  }
+  80% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+.flip-on-load {
+  animation: flip 1.5s;
+}
+
+/* flip the pane when hovered */
+
+.flip-container:hover .flipper,
+.flip-container.hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.flip-container,
+.front,
+.back {
+  width: 270px;
+  height: 365px;
+}
+
+/* flip speed goes here */
+
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  color: black;
+}
+
+/* hide back of pane during swap */
+
+.front,
+.back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(#003a71, #e80026);
+}
+
+/* front pane, placed above back */
+
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+
+.back {
+  transform: rotateY(0deg);
+  transform: rotateY(180deg);
+}
+
+.back-card-text {
+  font-family: "Cute Font", cursive;
+  font-size: 24px;
+  color: #e9ecef;
+}
+
+.card-footer {
+  max-height: 50px;
+}
+
+li {
+  max-height: 28px;
+}
+
+.getMoreInfoBtn {
+  width: 90%;
+  font-size: 24px;
+  background-color: #003a71;
+}
+
+.getMoreInfoBtn:hover {
+  background-color: #e80026;
+}

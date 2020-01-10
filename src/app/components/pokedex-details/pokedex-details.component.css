@@ -1,0 +1,26 @@
+.container {
+  margin-top: 100px;
+  font-family: "Cute Font", cursive;
+  font-size: 26px;
+  overflow: auto;
+}
+
+.abilities-height-weight {
+  margin: 5px 0 5px 0;
+}
+
+.card {
+  margin: 5px 0 5px 0;
+}
+
+.card-header {
+  cursor: pointer;
+}
+
+.moves-accordion-header {
+  font-size: 26px;
+}
+
+.fa {
+  font-size: 16px;
+}

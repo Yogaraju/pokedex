@@ -1,0 +1,179 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center text-capitalize">
+      <h1>{{ name }}</h1>
+    </div>
+  </div>
+
+  <div
+    class="col-12 d-flex justify-content-start bg-light abilities-height-weight"
+  >
+    <div class="text-capitalize">
+      {{ name }}
+    </div>
+    's abilites are
+    <ol>
+      <li
+        class="text-capitalize ml-1 p-0"
+        *ngFor="let pokemon of requiredPokedexDetails.abilities"
+      >
+        {{ pokemon.ability.name }}
+      </li>
+    </ol>
+  </div>
+  <div class="row">
+    <div class="col-4 bg-dark text-white d-flex justify-content-center">
+      <li>Height: {{ requiredPokedexDetails.height }}</li>
+    </div>
+    <div class="col-4 bg-dark text-white d-flex justify-content-center">
+      <li>Weight: {{ requiredPokedexDetails.weight }}</li>
+    </div>
+    <div
+      class="col-4 bg-dark text-white text-capitalize d-flex justify-content-center"
+    >
+      <li>Species: {{ requiredPokedexDetails.species.name }}</li>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header" id="moves">
+            <h5 class="mb-0 d-flex justify-content-start align-items-center">
+              <p
+                class="moves-accordion-header m-0 known-moves"
+                data-toggle="collapse"
+                data-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                <i class="fa fa-sort mr-2" aria-hidden="true"></i>
+                Known Moves
+              </p>
+            </h5>
+          </div>
+
+          <div
+            id="collapseOne"
+            class="collapse show"
+            aria-labelledby="moves"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <span
+                class="text-capitalize moves"
+                style="padding-right: 2px;"
+                *ngFor="let moves of requiredPokedexDetails.moves"
+              >
+                {{ moves.move.name }},
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="game-indices">
+            <h5 class="mb-0 d-flex justify-content-start align-items-center">
+              <p
+                class="moves-accordion-header m-0"
+                data-toggle="collapse"
+                data-target="#collapseTwo"
+                aria-expanded="true"
+                aria-controls="collapseTwo"
+              >
+                <i class="fa fa-sort mr-2" aria-hidden="true"></i>
+                Game Indices
+              </p>
+            </h5>
+          </div>
+
+          <div
+            id="collapseTwo"
+            class="collapse show"
+            aria-labelledby="game-indices"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <span
+                class="text-capitalize moves"
+                style="padding-right: 2px;"
+                *ngFor="let gameIndices of requiredPokedexDetails.game_indices"
+              >
+                {{ gameIndices.version.name }},
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="stats">
+            <h5 class="mb-0 d-flex justify-content-start align-items-center">
+              <p
+                class="moves-accordion-header m-0"
+                data-toggle="collapse"
+                data-target="#collapseThree"
+                aria-expanded="true"
+                aria-controls="collapseThree"
+              >
+                <i class="fa fa-sort mr-2" aria-hidden="true"></i>
+                Stats
+              </p>
+            </h5>
+          </div>
+
+          <div
+            id="collapseThree"
+            class="collapse show"
+            aria-labelledby="stats"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <span
+                class="text-capitalize moves"
+                style="padding-right: 2px;"
+                *ngFor="let stats of requiredPokedexDetails.stats"
+              >
+                {{ stats.stat.name }},
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header" id="types">
+            <h5 class="mb-0 d-flex justify-content-start align-items-center">
+              <p
+                class="moves-accordion-header m-0"
+                data-toggle="collapse"
+                data-target="#collapseFour"
+                aria-expanded="true"
+                aria-controls="collapseFour"
+              >
+                <i class="fa fa-sort mr-2" aria-hidden="true"></i>
+                Types
+              </p>
+            </h5>
+          </div>
+
+          <div
+            id="collapseFour"
+            class="collapse show"
+            aria-labelledby="types"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <span
+                class="text-capitalize moves"
+                style="padding-right: 2px;"
+                *ngFor="let types of requiredPokedexDetails.types"
+              >
+                {{ types.type.name }},
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
