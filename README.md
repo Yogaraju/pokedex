@@ -8,4 +8,4 @@ npm and node
 sudo npm install -g @angular/cli
 
 # Run
-ng serve 
+cd pokedex && ng serve 
